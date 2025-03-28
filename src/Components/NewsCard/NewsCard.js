@@ -24,7 +24,7 @@ const NewsCard = (props) => {
             <p className="news-card__date">{props.date}</p>
             <p className="news-card__language">{props.language}</p>
             <a href={props.link} className="news-card__link" target="_blank">
-            Read More
+            Read Mored
             </a>
         </div>
         </div>

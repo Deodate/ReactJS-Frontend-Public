@@ -1,4 +1,4 @@
-
+/* About Page Styles */
 .about {
     display: flex;
     justify-content: space-between;
@@ -15,13 +15,24 @@
     padding: 20px;
 }
 
+.about-image {
+    width: 100%;
+    height: 300px; /* Adjust as needed */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 .about-title {
     font-size: 24px;
     font-weight: bold;
+    margin-bottom: 15px;
 }
 
 .about-text {
     margin-top: 10px;
+    color: #333;
+    line-height: 1.6;
 }
 
 .about-right {
@@ -29,7 +40,6 @@
     align-items: left;
     text-align: left;
     padding: 20px;
-
 }
 
 .project-details-title {
@@ -39,11 +49,31 @@
 }
 
 .about-list {
-    list-style-type: none;
-    padding: 0;
+    list-style-type: disc;
+    padding-left: 20px;
     margin: 0;
 }
 
 .about-list-item {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .about-left,
+    .about-right {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .about-image {
+        height: 250px;
+        margin-bottom: 20px;
+    }
 }

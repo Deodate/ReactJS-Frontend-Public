@@ -67,7 +67,7 @@ const MarketPlace = () => {
     return (
         <div>
             <Header/>
-            <h1>MarketPlace Page</h1>
+            <h1>Markeage</h1>
             <SearchBar onSearch={handleSearch}/>
             <div className="product-card-container" style={{display:"flex", flexWrap:"wrap"}}>
                 {marketPlace.map((product) => (

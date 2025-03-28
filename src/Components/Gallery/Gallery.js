@@ -1,29 +1,48 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Gallery.css';
+import KinigiImage from '../../Assets/potatoes.jpg';
+import Cornwheat from '../../Assets/corn-wheat.jpg';
+import FarmView from '../../Assets/FarmView.JPG';
+import FarmsView from '../../Assets/FarmsView.JPG';
+import Viewimg from '../../Assets/Viewimg.jpg';
+import HomeImg from '../../Assets/wheatFarm.JPG';
+import Viewimgs from '../../Assets/Viwies.jpg';
+
 
 const images = [
-    'https://media.istockphoto.com/id/1280715716/photo/germany-stuttgart-magical-orange-sunset-sky-above-ripe-grain-field-nature-landscape-in-summer.jpg?s=612x612&w=0&k=20&c=TukToGq-LkmpxvEXEomC3d11prf_hDRSwA7pYsLYG50=',
-    'https://media.istockphoto.com/id/1401722160/photo/sunny-plantation-with-growing-soya.webp?b=1&s=170667a&w=0&k=20&c=evvmxmpiRM6sbnk59z876swwplz8mQN_ZxQWIO2eKA8=',
-    'https://www.theindiaforum.in/sites/default/files/field/image/2022/06/21/ramkumar-radhakrishnan-wikimedia-1622193304-1622193304.jpeg'
+    Viewimgs,
+    HomeImg,
+    FarmView,
+    KinigiImage,
+    Cornwheat,
+    FarmsView,
+    Viewimg,
+  
 ];
 
 const Gallery = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const navigate = useNavigate();
 
-    const prevImage = () => {
-        setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
-    };
-
-    const nextImage = () => {
-        setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
-    };
-
+    // Auto-advance images every 5 seconds
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
         }, 5000);
         return () => clearInterval(interval);
     }, []);
+
+    const handleSignUp = () => {
+        // Navigate to the signup page
+        navigate('/signup');
+    };
+
+    const handleSignIn = () => {
+        // Handle sign in action or navigation
+        navigate('/login');
+        // You could add: navigate('/login'); once the login route is uncommented
+    };
 
     return (
         <div className="gallery">
@@ -32,8 +51,12 @@ const Gallery = () => {
                     <img src={images[currentIndex]} alt="gallery" />
                 </div>
                 <div className="gallery__container__buttons">
-                    <button onClick={prevImage}>Prev</button>
-                    <button onClick={nextImage}>Next</button>
+                    <button className="gallery__button gallery__button--signup" onClick={handleSignUp}>
+                        Sign Up
+                    </button>
+                    <button className="gallery__button gallery__button--signin" onClick={handleSignIn}>
+                        Sign In
+                    </button>
                 </div>
             </div>
         </div>
