@@ -7,12 +7,12 @@ export const API_CONFIG = {
         SIGNOUT: '/api/auth/signout',
         FORGOT_PASSWORD: '/api/auth/forgot-password',
         RESET_PASSWORD: '/api/auth/reset-password',
-        VERIFY_RESET_CODE: '/api/auth/verify-reset-code'
-    },
-    ENDPOINTS: {
-        TEST_CASES: '/api/testcases',
-        USERS: '/api/users',
-        ROLES: '/api/roles'
+        VERIFY_RESET_CODE: '/api/auth/verify-reset-code',
+        TWO_FACTOR: {
+            VERIFY: '/api/auth/2fa/verify',
+            GENERATE: (userId) => `/api/auth/2fa/generate/${userId}`,
+            TOGGLE: (userIdentifier) => `/api/auth/2fa/${userIdentifier}`
+        }
     }
 };
 
@@ -23,8 +23,8 @@ export const AUTH_SETTINGS = {
     ROLES: {
         ADMIN: 'ROLE_ADMIN',
         USER: 'ROLE_USER',
-        FIELD_WORKER: 'ROLE_FIELD_WORKER',
-        AGRONOMIST: 'ROLE_AGRONOMIST'
+        FARMER: 'ROLE_FARMER',
+        TESTER: 'ROLE_TESTER'
     }
 };
 
@@ -33,4 +33,4 @@ export const ROUTE_SETTINGS = {
     PUBLIC: ['/login', '/signup', '/forgot-password'],
     DEFAULT_AUTH_REDIRECT: '/dashboard',
     DEFAULT_PUBLIC_REDIRECT: '/login'
-};
+}; 

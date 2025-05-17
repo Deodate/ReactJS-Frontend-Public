@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import './header.css';
+import { useAuth } from '../../contexts/AuthContext';
 
 /**
  * Header component for the application based on Agri Test design.
@@ -13,6 +14,7 @@ const Header = ({ loggedIn }) => {
     const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
     const newsDropdownRef = useRef(null);
     const productsDropdownRef = useRef(null);
+    const { user } = useAuth();
     
     const toggleNewsDropdown = (e) => {
         e.preventDefault();
@@ -180,6 +182,7 @@ const Header = ({ loggedIn }) => {
                         </li>
                     </ul>
                     
+                    <div className='header__right-section'>
                     <div className='header__contact'>
                         <NavLink 
                             to='/contact' 
@@ -193,6 +196,7 @@ const Header = ({ loggedIn }) => {
                             </svg>
                             Contact us
                         </NavLink>
+                        </div>
                     </div>
                 </nav>
             </div>

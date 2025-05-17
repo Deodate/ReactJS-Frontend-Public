@@ -34,8 +34,8 @@ const Gallery = () => {
     }, []);
 
     const handleSignUp = () => {
-        // Navigate to the signup page
-        navigate('/signup');
+        // Navigate to the login page instead of signup
+        navigate('/login');
     };
 
     const handleSignIn = () => {
