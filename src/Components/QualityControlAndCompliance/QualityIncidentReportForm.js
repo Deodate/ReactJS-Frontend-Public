@@ -53,7 +53,7 @@ const QualityIncidentReportForm = () => {
                 
                 <div className="form-group">
                     
-                    <input type="file" id="photosVideos" name="photosVideos" onChange={handleFileChange} placeholder="Upload Photos/Videos" />
+                    <input type="file" id="photosVideos" name="photosVideos" onChange={handleFileChange} />
                 </div>
                 
                 <div className="form-group">

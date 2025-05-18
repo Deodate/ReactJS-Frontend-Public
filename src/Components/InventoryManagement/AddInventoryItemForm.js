@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
-import './StockMovementForm.css';
+import './AddInventoryItemForm.css';
 
-const StockMovementForm = () => {
+const AddInventoryItemForm = () => {
     const [productName, setProductName] = useState('');
-    const [movementType, setMovementType] = useState('');
+    const [batchNumber, setBatchNumber] = useState('');
     const [quantity, setQuantity] = useState('');
-    const [date, setDate] = useState('');
-    const [reason, setReason] = useState('');
-    const [authorizedBy, setAuthorizedBy] = useState('');
+    const [supplier, setSupplier] = useState('');
+    const [purchaseDate, setPurchaseDate] = useState('');
+    const [expiryDate, setExpiryDate] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
         // Handle form submission logic here
         console.log({
             productName,
-            movementType,
+            batchNumber,
             quantity,
-            date,
-            reason,
-            authorizedBy
+            supplier,
+            purchaseDate,
+            expiryDate
         });
         // Clear form or show success message
     };
@@ -29,8 +29,8 @@ const StockMovementForm = () => {
     };
 
     return (
-        <div className="stock-movement-form-container">
-            <form className="stock-movement-form" onSubmit={handleSubmit}>
+        <div className="add-inventory-item-form-container">
+            <form className="add-inventory-item-form" onSubmit={handleSubmit}>
                 <div className="form-row">
                     <input
                         type="text"
@@ -41,16 +41,13 @@ const StockMovementForm = () => {
                     />
                 </div>
                 <div className="form-row">
-                     <select
-                        placeholder="Type of Movement"
-                        value={movementType}
-                        onChange={(e) => setMovementType(e.target.value)}
+                    <input
+                        type="text"
+                        placeholder="Batch Number"
+                        value={batchNumber}
+                        onChange={(e) => setBatchNumber(e.target.value)}
                         required
-                    >
-                        <option value="">Select Type of Movement</option>
-                        <option value="In">In</option>
-                        <option value="Out">Out</option>
-                    </select>
+                    />
                 </div>
                 <div className="form-row">
                     <input
@@ -63,28 +60,28 @@ const StockMovementForm = () => {
                 </div>
                 <div className="form-row">
                     <input
+                        type="text"
+                        placeholder="Supplier"
+                        value={supplier}
+                        onChange={(e) => setSupplier(e.target.value)}
+                        required
+                    />
+                </div>
+                <div className="form-row">
+                    <input
                         type="date"
-                        placeholder="Date"
-                        value={date}
-                        onChange={(e) => setDate(e.target.value)}
+                        placeholder="Purchase Date"
+                        value={purchaseDate}
+                        onChange={(e) => setPurchaseDate(e.target.value)}
                         required
                     />
                 </div>
                 <div className="form-row">
                     <input
-                        type="text"
-                        placeholder="Reason for Movement"
-                        value={reason}
-                        onChange={(e) => setReason(e.target.value)}
-                        required
-                    />
-                </div>
-                <div className="form-row">
-                    <input
-                        type="text"
-                        placeholder="Authorized By"
-                        value={authorizedBy}
-                        onChange={(e) => setAuthorizedBy(e.target.value)}
+                        type="date"
+                        placeholder="Expiry Date"
+                        value={expiryDate}
+                        onChange={(e) => setExpiryDate(e.target.value)}
                         required
                     />
                 </div>
@@ -98,4 +95,4 @@ const StockMovementForm = () => {
     );
 };
 
-export default StockMovementForm; 
+export default AddInventoryItemForm; 

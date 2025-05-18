@@ -23,6 +23,32 @@ import ReportGenerationForm from '../Components/DataAnalyticsAndReporting/Report
 import PerformanceAnalysisForm from '../Components/DataAnalyticsAndReporting/PerformanceAnalysisForm';
 import ComplianceChecklistForm from '../Components/ComplianceChecklist/ComplianceChecklistForm';
 import QualityIncidentReportForm from '../Components/QualityControlAndCompliance/QualityIncidentReportForm';
+import BroadcastAnnouncementForm from '../Components/CommunicationAndNotifications/BroadcastAnnouncementForm';
+import TaskAssignmentForm from '../Components/CommunicationAndNotifications/TaskAssignmentForm';
+import AutomatedAlertForm from '../Components/CommunicationAndNotifications/AutomatedAlertForm';
+import CalendarManagementForm from '../Components/OperationalTools/CalendarManagementForm';
+import UserActivityLogForm from '../Components/UserManagement/UserActivityLogForm';
+import AuditTrailForm from '../Components/UserManagement/AuditTrailForm';
+import PasswordPoliciesForm from '../Components/UserManagement/PasswordPoliciesForm';
+import CostTrackingForm from '../Components/OperationalTools/CostTrackingForm';
+import FieldActivityTrackingForm from '../Components/OperationalTools/FieldActivityTrackingForm';
+import ProductRegistrationForm from '../Components/ProductTesting/ProductRegistrationForm';
+import EvidenceUploadForm from '../Components/ProductTesting/EvidenceUploadForm';
+import TestSchedulingForm from '../Components/ProductTesting/TestSchedulingForm';
+import HistoricalDataForm from '../Components/ProductTesting/HistoricalDataForm';
+import DataVisualizationForm from '../Components/DataAnalyticsAndReporting/DataVisualizationForm';
+import ResultsComparisonForm from '../Components/ProductTesting/ResultsComparisonForm';
+import AddInventoryItemForm from '../Components/InventoryManagement/AddInventoryItemForm';
+import StockValuationForm from '../Components/InventoryManagement/StockValuationForm';
+import ExpiryAlertSetupForm from '../Components/InventoryManagement/ExpiryAlertSetupForm';
+import CustomReportBuilderForm from '../Components/DataAnalyticsAndReporting/CustomReportBuilderForm';
+import ForecastingForm from '../Components/DataAnalyticsAndReporting/ForecastingForm';
+import ProtocolRegistrationForm from '../Components/ProtocolRegistrationForm/ProtocolRegistrationForm';
+import AlertConfigurationForm from '../Components/AlertConfigurationForm/AlertConfigurationForm';
+import FeedbackCollectionForm from '../Components/FeedbackCollectionForm/FeedbackCollectionForm';
+import BroadcastMessageForm from '../Components/CommunicationAndNotifications/BroadcastMessageForm';
+import ResourceAllocationForm from '../Components/OperationalTools/ResourceAllocationForm';
+import TimeTrackingForm from '../Components/OperationalTools/TimeTrackingForm';
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -127,6 +153,84 @@ const Dashboard = () => {
   
   // Quality Incident Report form state
   const [showQualityIncidentReportForm, setShowQualityIncidentReportForm] = useState(false);
+  
+  // Broadcast Announcement form state
+  const [showBroadcastAnnouncementForm, setShowBroadcastAnnouncementForm] = useState(false);
+  
+  // Task Assignment form state
+  const [showTaskAssignmentForm, setShowTaskAssignmentForm] = useState(false);
+  
+  // Automated Alert form state
+  const [showAutomatedAlertForm, setShowAutomatedAlertForm] = useState(false);
+  
+  // Calendar Management form state
+  const [showCalendarManagementForm, setShowCalendarManagementForm] = useState(false);
+  
+  // User Activity Log form state
+  const [showUserActivityLogForm, setShowUserActivityLogForm] = useState(false);
+  
+  // Audit Trail form state
+  const [showAuditTrailForm, setShowAuditTrailForm] = useState(false);
+  
+  // Password Policies form state
+  const [showPasswordPoliciesForm, setShowPasswordPoliciesForm] = useState(false);
+  
+  // Cost Tracking form state
+  const [showCostTrackingForm, setShowCostTrackingForm] = useState(false);
+  
+  // Field Activity Tracking form state
+  const [showFieldActivityTrackingForm, setShowFieldActivityTrackingForm] = useState(false);
+  
+  // Product Registration form state
+  const [showProductRegistrationForm, setShowProductRegistrationForm] = useState(false);
+  
+  // Evidence Upload form state
+  const [showEvidenceUploadForm, setShowEvidenceUploadForm] = useState(false);
+  
+  // Test Scheduling form state
+  const [showTestSchedulingForm, setShowTestSchedulingForm] = useState(false);
+  
+  // Historical Data form state
+  const [showHistoricalDataForm, setShowHistoricalDataForm] = useState(false);
+  
+  // Data Visualization form state
+  const [showDataVisualizationForm, setShowDataVisualizationForm] = useState(false);
+  
+  // Results Comparison form state
+  const [showResultsComparisonForm, setShowResultsComparisonForm] = useState(false);
+  
+  // Add Inventory Item form state
+  const [showAddInventoryItemForm, setShowAddInventoryItemForm] = useState(false);
+  
+  // Stock Valuation form state
+  const [showStockValuationForm, setShowStockValuationForm] = useState(false);
+  
+  // Expiry Alert Setup form state
+  const [showExpiryAlertSetupForm, setShowExpiryAlertSetupForm] = useState(false);
+  
+  // Custom Report Builder form state
+  const [showCustomReportBuilderForm, setShowCustomReportBuilderForm] = useState(false);
+  
+  // Forecasting form state
+  const [showForecastingForm, setShowForecastingForm] = useState(false);
+  
+  // Protocol Registration form state
+  const [showProtocolRegistrationForm, setShowProtocolRegistrationForm] = useState(false);
+  
+  // Alert Configuration form state
+  const [showAlertConfigurationForm, setShowAlertConfigurationForm] = useState(false);
+  
+  // Feedback Collection form state
+  const [showFeedbackCollectionForm, setShowFeedbackCollectionForm] = useState(false);
+  
+  // Broadcast Message form state
+  const [showBroadcastMessageForm, setShowBroadcastMessageForm] = useState(false);
+  
+  // Resource Allocation form state
+  const [showResourceAllocationForm, setShowResourceAllocationForm] = useState(false);
+  
+  // Time Tracking form state
+  const [showTimeTrackingForm, setShowTimeTrackingForm] = useState(false);
   
   // Toggle notifications dropdown
   const toggleNotifications = () => {
@@ -320,6 +424,30 @@ const Dashboard = () => {
     const showPerformanceAnalysis = queryParams.get('PerformanceAnalysis');
     const showComplianceChecklist = queryParams.get('ComplianceChecklistForm');
     const showQualityIncidentReport = queryParams.get('QualityIncidentReportForm');
+    const showBroadcastAnnouncement = queryParams.get('BroadcastAnnouncementForm');
+    const showTaskAssignment = queryParams.get('TaskAssignmentForm');
+    const showAutomatedAlert = queryParams.get('AutomatedAlertForm');
+    const showCalendarManagement = queryParams.get('CalendarManagementForm');
+    const showUserActivityLog = queryParams.get('UserActivityLogForm');
+    const showAuditTrail = queryParams.get('AuditTrailForm');
+    const showCostTracking = queryParams.get('CostTrackingForm');
+    const showFieldActivityTracking = queryParams.get('FieldActivityTrackingForm');
+    const showProductRegistration = queryParams.get('ProductRegistrationForm');
+    const showEvidenceUpload = queryParams.get('EvidenceUploadForm');
+    const showTestScheduling = queryParams.get('TestSchedulingForm');
+    const showHistoricalData = queryParams.get('HistoricalDataForm');
+    const showDataVisualization = queryParams.get('DataVisualizationForm');
+    const showResultsComparison = queryParams.get('ResultsComparisonForm');
+    const showAddInventoryItem = queryParams.get('AddInventoryItemForm');
+    const showStockValuation = queryParams.get('StockValuationForm');
+    const showExpiryAlertSetup = queryParams.get('ExpiryAlertSetupForm');
+    const showCustomReportBuilder = queryParams.get('CustomReportBuilderForm');
+    const showForecasting = queryParams.get('ForecastingForm');
+    const showProtocolRegistration = queryParams.get('ProtocolRegistrationForm');
+    const showAlertConfiguration = queryParams.get('AlertConfigurationForm');
+    const showFeedbackCollection = queryParams.get('FeedbackCollection');
+    const showResourceAllocation = queryParams.get('ResourceAllocationForm');
+    const showTimeTracking = queryParams.get('TimeTrackingForm');
 
     // Reset all form visibility states first
     setShowComplianceForm(false);
@@ -333,8 +461,58 @@ const Dashboard = () => {
     setShowPerformanceAnalysisForm(false);
     setShowComplianceChecklistForm(false);
     setShowQualityIncidentReportForm(false);
+    setShowBroadcastAnnouncementForm(false);
+    setShowTaskAssignmentForm(false);
+    setShowAutomatedAlertForm(false);
+    setShowCalendarManagementForm(false);
+    setShowUserActivityLogForm(false);
+    setShowAuditTrailForm(false);
+    setShowCostTrackingForm(false);
+    setShowFieldActivityTrackingForm(false);
+    setShowProductRegistrationForm(false);
+    setShowEvidenceUploadForm(false);
+    setShowTestSchedulingForm(false);
+    setShowHistoricalDataForm(false);
+    setShowDataVisualizationForm(false);
+    setShowResultsComparisonForm(false);
+    setShowAddInventoryItemForm(false);
+    setShowStockValuationForm(false);
+    setShowExpiryAlertSetupForm(false);
+    setShowCustomReportBuilderForm(false);
+    setShowForecastingForm(false);
+    setShowProtocolRegistrationForm(false);
+    setShowAlertConfigurationForm(false);
+    setShowFeedbackCollectionForm(false);
+    setShowBroadcastMessageForm(false);
+    setShowResourceAllocationForm(false);
+    setShowTimeTrackingForm(false);
 
-    if (showTestDocumentation === 'create') {
+    // Set state for Broadcast Message form based on URL parameter
+    if (queryParams.get('BroadcastMessageForm') === 'create') {
+      setShowBroadcastMessageForm(true);
+    } else {
+      setShowBroadcastMessageForm(false);
+    }
+
+    if (showBroadcastAnnouncement === 'create') {
+      setShowBroadcastAnnouncementForm(true);
+      setActiveTab('broadcastannouncementform');
+    } else if (showTaskAssignment === 'create') {
+      setShowTaskAssignmentForm(true);
+      setActiveTab('taskassignmentform');
+    } else if (showAutomatedAlert === 'create') {
+      setShowAutomatedAlertForm(true);
+      setActiveTab('automatedalertform');
+    } else if (showCalendarManagement === 'create') {
+      setShowCalendarManagementForm(true);
+      setActiveTab('calendarmanagementform');
+    } else if (showUserActivityLog === 'create') {
+      setShowUserActivityLogForm(true);
+      setActiveTab('useractivitylogform');
+    } else if (showAuditTrail === 'create') {
+      setShowAuditTrailForm(true);
+      setActiveTab('audittrailform');
+    } else if (showTestDocumentation === 'create') {
       setShowTestDocumentationForm(true);
       setActiveTab('testdocumentation');
     } else if (showReportGeneration === 'create') {
@@ -376,6 +554,60 @@ const Dashboard = () => {
     } else if (showStockMonitoring === 'create') {
       setShowStockMonitoringForm(true);
       setActiveTab('stockmonitoring'); // Set a unique activeTab for stock monitoring
+    } else if (showCostTracking === 'create') {
+      setShowCostTrackingForm(true);
+      setActiveTab('costtracking'); // Set a unique activeTab for cost tracking
+    } else if (showFieldActivityTracking === 'create') {
+      setShowFieldActivityTrackingForm(true);
+      setActiveTab('fieldactivitytracking'); // Set a unique activeTab
+    } else if (showProductRegistration === 'create') {
+      setShowProductRegistrationForm(true);
+      setActiveTab('productregistration'); // Set a unique activeTab
+    } else if (showEvidenceUpload === 'create') {
+      setShowEvidenceUploadForm(true);
+      setActiveTab('evidenceupload'); // Set a unique activeTab
+    } else if (showTestScheduling === 'create') {
+      setShowTestSchedulingForm(true);
+      setActiveTab('testschedulingform'); // Set a unique activeTab
+    } else if (showHistoricalData === 'create') {
+      setShowHistoricalDataForm(true);
+      setActiveTab('historicaldataform'); // Set a unique activeTab
+    } else if (showDataVisualization === 'create') {
+      setShowDataVisualizationForm(true);
+      setActiveTab('datavisualizationform'); // Set a unique activeTab
+    } else if (showResultsComparison === 'create') {
+      setShowResultsComparisonForm(true);
+      setActiveTab('resultscomparisonform'); // Set a unique activeTab
+    } else if (showAddInventoryItem === 'create') {
+      setShowAddInventoryItemForm(true);
+      setActiveTab('addinventoryitemform'); // Set a unique activeTab
+    } else if (showStockValuation === 'create') {
+      setShowStockValuationForm(true);
+      setActiveTab('stockvaluationform'); // Set a unique activeTab
+    } else if (showExpiryAlertSetup === 'create') {
+      setShowExpiryAlertSetupForm(true);
+      setActiveTab('expiryalertsetupform'); // Set a unique activeTab
+    } else if (showCustomReportBuilder === 'create') {
+      setShowCustomReportBuilderForm(true);
+      setActiveTab('customreportbuilderform'); // Set a unique activeTab
+    } else if (showForecasting === 'create') {
+      setShowForecastingForm(true);
+      setActiveTab('forecastingform'); // Set a unique activeTab
+    } else if (showProtocolRegistration === 'create') {
+      setShowProtocolRegistrationForm(true);
+      setActiveTab('protocolregistrationform'); // Set a unique activeTab
+    } else if (showAlertConfiguration === 'create') {
+      setShowAlertConfigurationForm(true);
+      setActiveTab('alertconfigurationform'); // Set a unique activeTab
+    } else if (showFeedbackCollection === 'create') {
+      setShowFeedbackCollectionForm(true);
+      setActiveTab('feedbackcollection'); // Set a unique activeTab
+    } else if (showResourceAllocation === 'create') {
+      setShowResourceAllocationForm(true);
+      setActiveTab('resourceallocationform'); // Set a unique activeTab
+    } else if (showTimeTracking === 'create') {
+      setShowTimeTrackingForm(true);
+      setActiveTab('timetrackingform'); // Set a unique activeTab
     } else {
       // If no specific form is requested via URL, show default tab (e.g., soil)
       setActiveTab('soil');
@@ -417,7 +649,6 @@ const Dashboard = () => {
           { id: 'WT-501', source: 'Irrigation Well 1', farmName: 'Green Valley Farm', date: '2023-06-14', pH: 7.1, turbidity: '12 NTU', ecoli: 'Negative', nitrate: '4.2 mg/L', hardness: '120 mg/L', status: 'Completed' },
           { id: 'WT-502', source: 'Reservoir', farmName: 'Sunshine Acres', date: '2023-06-16', pH: 6.9, turbidity: '8 NTU', ecoli: 'Negative', nitrate: '2.8 mg/L', hardness: '95 mg/L', status: 'Completed' },
           { id: 'WT-503', source: 'Creek', farmName: 'Hillside Orchard', date: '2023-06-18', pH: 7.3, turbidity: '15 NTU', ecoli: 'Positive', nitrate: '5.6 mg/L', hardness: '150 mg/L', status: 'Attention' },
-          { id: 'WT-504', source: 'Irrigation Well 2', farmName: 'Riverside Plantation', date: '2023-06-19', pH: 6.8, turbidity: '10 NTU', ecoli: 'Negative', nitrate: '3.4 mg/L', hardness: '110 mg/L', status: 'Processing' },
         ]);
         
         setEquipment([
@@ -688,6 +919,84 @@ const Dashboard = () => {
     );
   };
 
+  // Render the appropriate form based on the query parameters
+  const renderForm = () => {
+    if (showComplianceForm) {
+      return <ComplianceForm />;
+    } else if (showTestCaseForm) {
+      return <TestCaseForm />;
+    } else if (showTrialPhaseForm) {
+      return <TrialPhaseForm />;
+    } else if (showTestDocumentationForm) {
+      return <TestDocumentationForm />;
+    } else if (showProductEntryForm) {
+      return <ProductEntryForm />;
+    } else if (showStockMovementForm) {
+      return <StockMovementForm />;
+    } else if (showStockMonitoringForm) {
+      return <StockMonitoringForm />;
+    } else if (showReportGenerationForm) {
+      return <ReportGenerationForm />;
+    } else if (showPerformanceAnalysisForm) {
+      return <PerformanceAnalysisForm />;
+    } else if (showComplianceChecklistForm) {
+      return <ComplianceChecklistForm />;
+    } else if (showQualityIncidentReportForm) {
+      return <QualityIncidentReportForm />;
+    } else if (showBroadcastAnnouncementForm) {
+      return <BroadcastAnnouncementForm />;
+    } else if (showTaskAssignmentForm) {
+      return <TaskAssignmentForm />;
+    } else if (showAutomatedAlertForm) {
+      return <AutomatedAlertForm />;
+    } else if (showCalendarManagementForm) {
+      return <CalendarManagementForm />;
+    } else if (showUserActivityLogForm) {
+      return <UserActivityLogForm />;
+    } else if (showAuditTrailForm) {
+      return <AuditTrailForm />;
+    } else if (showCostTrackingForm) {
+      return <CostTrackingForm />;
+    } else if (showFieldActivityTrackingForm) {
+      return <FieldActivityTrackingForm />;
+    } else if (showProductRegistrationForm) {
+      return <ProductRegistrationForm />;
+    } else if (showEvidenceUploadForm) {
+      return <EvidenceUploadForm />;
+    } else if (showTestSchedulingForm) {
+      return <TestSchedulingForm />;
+    } else if (showHistoricalDataForm) {
+      return <HistoricalDataForm />;
+    } else if (showDataVisualizationForm) {
+      return <DataVisualizationForm />;
+    } else if (showResultsComparisonForm) {
+      return <ResultsComparisonForm />;
+    } else if (showAddInventoryItemForm) {
+      return <AddInventoryItemForm />;
+    } else if (showStockValuationForm) {
+      return <StockValuationForm />;
+    } else if (showExpiryAlertSetupForm) {
+      return <ExpiryAlertSetupForm />;
+    } else if (showCustomReportBuilderForm) {
+      return <CustomReportBuilderForm />;
+    } else if (showForecastingForm) {
+      return <ForecastingForm />;
+    } else if (showProtocolRegistrationForm) {
+      return <ProtocolRegistrationForm />;
+    } else if (showAlertConfigurationForm) {
+      return <AlertConfigurationForm />;
+    } else if (showFeedbackCollectionForm) {
+      return <FeedbackCollectionForm />;
+    } else if (showBroadcastMessageForm) {
+      return <BroadcastMessageForm />;
+    } else if (showResourceAllocationForm) {
+      return <ResourceAllocationForm />;
+    } else if (showTimeTrackingForm) {
+      return <TimeTrackingForm />;
+    }
+    return null; // Or a default dashboard view
+  };
+
     return (
     <div className="dashboard-container">
       <div className="twilio-header">
@@ -810,10 +1119,36 @@ const Dashboard = () => {
                         setActiveTab('testdocumentation');
                         navigate('/dashboard?CreatingTestDocumentation=create', { replace: true });
                       }}>Test Documentation</div>
-                      <div className="menu-item">Evidence Upload</div>
-                      <div className="menu-item">Test Scheduling</div>
-                      <div className="menu-item">Historical Data</div>
-                      <div className="menu-item">Results Comparison</div>
+                      <div className="menu-item" onClick={() => {
+                        setShowProductRegistrationForm(true);
+                        setActiveTab('productregistration');
+                        navigate('/dashboard?ProductRegistrationForm=create', { replace: true });
+                      }}>Product Registration</div>
+                      <div className="menu-item" onClick={() => {
+                        setShowEvidenceUploadForm(true);
+                        setActiveTab('evidenceupload');
+                        navigate('/dashboard?EvidenceUploadForm=create', { replace: true });
+                      }}>Evidence Upload</div>
+                      <div className="menu-item" onClick={() => {
+                        setShowTestSchedulingForm(true);
+                        setActiveTab('testschedulingform');
+                        navigate('/dashboard?TestSchedulingForm=create', { replace: true });
+                      }}>Test Scheduling</div>
+                      <div className="menu-item" onClick={() => {
+                        setShowHistoricalDataForm(true);
+                        setActiveTab('historicaldataform');
+                        navigate('/dashboard?HistoricalDataForm=create', { replace: true });
+                      }}>Historical Data</div>
+                      <div className="menu-item" onClick={() => {
+                        setShowDataVisualizationForm(true);
+                        setActiveTab('datavisualizationform');
+                        navigate('/dashboard?DataVisualizationForm=create', { replace: true });
+                      }}>Data Visualization</div>
+                      <div className="menu-item" onClick={() => {
+                        setShowResultsComparisonForm(true);
+                        setActiveTab('resultscomparisonform');
+                        navigate('/dashboard?ResultsComparisonForm=create', { replace: true });
+                      }}>Results Comparison</div>
                       <div className="menu-item">Weather Integration</div>
                     </div>
                   )}
@@ -922,9 +1257,23 @@ const Dashboard = () => {
                         setActiveTab('stockmonitoring');
                         navigate('/dashboard?StockMonitoringForm=create', { replace: true });
                       }}>Stock Monitoring Form</div>
+                      <div className="menu-item" onClick={() => {
+                        setShowAddInventoryItemForm(true);
+                        setActiveTab('addinventoryitemform');
+                        navigate('/dashboard?AddInventoryItemForm=create', { replace: true });
+                      }}>Add Inventory Item</div>
+                      <div className="menu-item" onClick={() => {
+                        setShowExpiryAlertSetupForm(true);
+                        setActiveTab('expiryalertsetupform');
+                        navigate('/dashboard?ExpiryAlertSetupForm=create', { replace: true });
+                      }}>Expiration Alerts</div>
                       <div className="menu-item">Real-time Tracking</div>
-                      <div className="menu-item">Expiration Alerts</div>
                       <div className="menu-item">Valuation Reports</div>
+                      <div className="menu-item" onClick={() => {
+                        setShowStockValuationForm(true);
+                        setActiveTab('stockvaluationform');
+                        navigate('/dashboard?StockValuationForm=create', { replace: true });
+                      }}>Stock Valuation</div>
                       <div className="menu-item" onClick={() => navigate('/products-management')}>Product Management</div>
                       <div className="menu-item">Quality Control</div>
                     </div>
@@ -962,7 +1311,11 @@ const Dashboard = () => {
                         setActiveTab('performanceanalysis');
                         navigate('/dashboard?PerformanceAnalysis=create', { replace: true });
                       }}>Performance Analysis Form</div>
-                      <div className="menu-item">Customizable Dashboard</div>
+                      <div className="menu-item" onClick={() => {
+                        setShowCustomReportBuilderForm(true);
+                        setActiveTab('customreportbuilderform');
+                        navigate('/dashboard?CustomReportBuilderForm=create', { replace: true });
+                      }}>Custom Report Builder</div>
                       <div className="menu-item">Data Visualization</div>
                       <div className="menu-item">Seasonal Analytics</div>
                       <div className="menu-item">Success Rate Analysis</div>
@@ -970,7 +1323,11 @@ const Dashboard = () => {
                       <div className="menu-item">Export Tools</div>
                       <div className="menu-item">Report Scheduling</div>
                       <div className="menu-item">Trend Analysis</div>
-                      <div className="menu-item">Forecasting</div>
+                      <div className="menu-item" onClick={() => {
+                        setShowForecastingForm(true);
+                        setActiveTab('forecastingform');
+                        navigate('/dashboard?ForecastingForm=create', { replace: true });
+                      }}>Forecasting</div>
                     </div>
                   )}
                 </div>
@@ -998,8 +1355,16 @@ const Dashboard = () => {
                     <div className="sub-content">
                       <div className="menu-item">Role Management</div>
                       <div className="menu-item">Multi-factor Authentication</div>
-                      <div className="menu-item">Activity Logs</div>
-                      <div className="menu-item">Audit Trails</div>
+                      <div className="menu-item" onClick={() => {
+                        setShowUserActivityLogForm(true);
+                        setActiveTab('useractivitylogform');
+                        navigate('/dashboard?UserActivityLogForm=create', { replace: true });
+                      }}>User Activity Log</div>
+                      <div className="menu-item" onClick={() => {
+                        setShowAuditTrailForm(true);
+                        setActiveTab('audittrailform');
+                        navigate('/dashboard?AuditTrailForm=create', { replace: true });
+                      }}>Audit Trails</div>
                       <div className="menu-item">Password Policies</div>
                       <div className="menu-item">Session Management</div>
                       <div className="menu-item">Data Encryption</div>
@@ -1030,14 +1395,38 @@ const Dashboard = () => {
                     
                   {notificationsSubMenuOpen && (
                     <div className="sub-content">
-                      <div className="menu-item">Automated Alerts</div>
+                      <div className="menu-item" onClick={() => {
+                        setShowAutomatedAlertForm(true);
+                        setActiveTab('automatedalertform');
+                        navigate('/dashboard?AutomatedAlertForm=create', { replace: true });
+                      }}>Automated Alerts</div>
                       <div className="menu-item">SMS Notifications</div>
                       <div className="menu-item">Announcements</div>
                       <div className="menu-item">Task Assignments</div>
                       <div className="menu-item">Reminders</div>
                       <div className="menu-item">Status Updates</div>
                       <div className="menu-item">Emergency Alerts</div>
-                      <div className="menu-item">Feedback Collection</div>
+                      <div className="menu-item" onClick={() => {
+                        setShowFeedbackCollectionForm(true);
+                        setActiveTab('feedbackcollection');
+                        navigate('/dashboard?FeedbackCollection=create', { replace: true });
+                      }}>Feedback Collection</div>
+                      <div className="menu-item" onClick={() => {
+                        setShowBroadcastAnnouncementForm(true);
+                        setActiveTab('broadcastannouncementform');
+                        navigate('/dashboard?BroadcastAnnouncementForm=create', { replace: true });
+                      }}>Broadcast Announcement</div>
+                      <div className="menu-item" onClick={() => {
+                        setShowTaskAssignmentForm(true);
+                        setActiveTab('taskassignmentform');
+                        navigate('/dashboard?TaskAssignmentForm=create', { replace: true });
+                      }}>Task Assignment Form</div>
+                      {/* Add Alert Configuration Menu Item */}
+                      <div className="menu-item" onClick={() => {
+                        setShowAlertConfigurationForm(true);
+                        setActiveTab('alertconfigurationform');
+                        navigate('/dashboard?AlertConfigurationForm=create', { replace: true });
+                      }}>Alert Configuration</div>
                     </div>
                   )}
                 </div>
@@ -1063,12 +1452,32 @@ const Dashboard = () => {
                     
                   {calendarSubMenuOpen && (
                     <div className="sub-content">
-                      <div className="menu-item">Calendar Management</div>
+                      <div className="menu-item" onClick={() => {
+                        setShowCalendarManagementForm(true);
+                        setActiveTab('calendarmanagementform');
+                        navigate('/dashboard?CalendarManagementForm=create', { replace: true });
+                      }}>Calendar Management</div>
                       <div className="menu-item">Task Scheduling</div>
-                      <div className="menu-item">Resource Allocation</div>
-                      <div className="menu-item">Field Activity Tracking</div>
-                      <div className="menu-item">Cost Tracking</div>
-                      <div className="menu-item">Time Tracking</div>
+                      <div className="menu-item" onClick={() => {
+                        setShowFieldActivityTrackingForm(true);
+                        setActiveTab('fieldactivitytracking');
+                        navigate('/dashboard?FieldActivityTrackingForm=create', { replace: true });
+                      }}>Field Activity Tracking</div>
+                      <div className="menu-item" onClick={() => {
+                        setShowCostTrackingForm(true);
+                        setActiveTab('costtracking');
+                        navigate('/dashboard?CostTrackingForm=create', { replace: true });
+                      }}>Cost Tracking</div>
+                      <div className="menu-item" onClick={() => {
+                        setShowTimeTrackingForm(true);
+                        setActiveTab('timetrackingform');
+                        navigate('/dashboard?TimeTrackingForm=create', { replace: true });
+                      }}>Time Tracking</div>
+                      <div className="menu-item" onClick={() => {
+                        setShowResourceAllocationForm(true);
+                        // setActiveTab might not be needed if rendering is solely based on showResourceAllocationForm
+                        navigate('/dashboard?ResourceAllocationForm=create', { replace: true });
+                      }}>Resource Allocation</div>
                     </div>
                   )}
                 </div>
@@ -1080,7 +1489,7 @@ const Dashboard = () => {
           <div className="sidebar-section">
             <div className="section-header" onClick={() => setQualityControlOpen(!qualityControlOpen)}>
               {qualityControlOpen ? <FaChevronDown className="toggle-icon" /> : <FaChevronRight className="toggle-icon" />}
-              <FaClipboardCheck className="sidebar-icon" /> {/* Using a relevant icon, e.g., ClipboardCheck */}
+              <FaClipboardCheck className="sidebar-icon" /> 
               <span className="section-title">Quality Control and Compliance</span>
             </div>
             
@@ -1098,13 +1507,18 @@ const Dashboard = () => {
                         setShowComplianceChecklistForm(true);
                         setActiveTab('compliancechecklistform');
                         navigate('/dashboard?ComplianceChecklistForm=create', { replace: true });
-                      }}>Compliance Checklist Form</div>
+                      }}>Compliance Checklist</div>
                       <div className="menu-item" onClick={() => {
                         setShowQualityIncidentReportForm(true);
-                        setActiveTab('qualityincidentreport');
+                        setActiveTab('qualityincidentreportform');
                         navigate('/dashboard?QualityIncidentReportForm=create', { replace: true });
-                      }}>Quality Incident Report Form</div>
-                      {/* Add other compliance related menu items here */}
+                      }}>Quality Incident Report</div>
+                      {/* Add Protocol Registration Menu Item */}
+                      <div className="menu-item" onClick={() => {
+                        setShowProtocolRegistrationForm(true);
+                        setActiveTab('protocolregistrationform');
+                        navigate('/dashboard?ProtocolRegistrationForm=create', { replace: true });
+                      }}>Protocol Registration</div>
                     </div>
                   )}
                 </div>
@@ -1916,10 +2330,7 @@ const Dashboard = () => {
             <div className="table-container">
               <div className="table-header-actions">
                 <h2>Compliance Checklist Form</h2>
-                {/* Optionally add a back button if needed */}
-                {/* <button onClick={() => navigate(-1)}>Back</button> */}
               </div>
-              {/* Use a wrapper class if needed for styling */}
               <div className="dashboard-compliancechecklistform-wrapper">
                 <ComplianceChecklistForm />
               </div>
@@ -1929,12 +2340,259 @@ const Dashboard = () => {
             <div className="table-container">
               <div className="table-header-actions">
                 <h2>Quality Incident Report Form</h2>
-                {/* Optionally add a back button if needed */}
-                {/* <button onClick={() => navigate(-1)}>Back</button> */}
               </div>
-              {/* Use a wrapper class if needed for styling */}
               <div className="dashboard-qualityincidentreport-wrapper">
                 <QualityIncidentReportForm />
+              </div>
+            </div>
+          )}
+          {activeTab === 'broadcastannouncementform' && showBroadcastAnnouncementForm && (
+            <div className="table-container">
+              <div className="table-header-actions">
+                <h2>Broadcast Announcement Form</h2>
+              </div>
+              <div className="dashboard-broadcastannouncementform-wrapper">
+                <BroadcastAnnouncementForm />
+              </div>
+            </div>
+          )}
+          {activeTab === 'taskassignmentform' && showTaskAssignmentForm && (
+            <div className="table-container">
+              <div className="table-header-actions">
+                <h2>Task Assignment Form</h2>
+              </div>
+              <div className="dashboard-taskassignmentform-wrapper">
+                <TaskAssignmentForm />
+              </div>
+            </div>
+          )}
+          {activeTab === 'automatedalertform' && showAutomatedAlertForm && (
+            <div className="table-container">
+              <div className="table-header-actions">
+                <h2>Automated Alert Form</h2>
+              </div>
+              <div className="dashboard-automatedalertform-wrapper">
+                <AutomatedAlertForm />
+              </div>
+            </div>
+          )}
+          {activeTab === 'calendarmanagementform' && showCalendarManagementForm && (
+            <div className="table-container">
+              <div className="table-header-actions">
+                <h2>Calendar Management Form</h2>
+              </div>
+              <div className="dashboard-calendarmanagementform-wrapper">
+                <CalendarManagementForm />
+              </div>
+            </div>
+          )}
+          {activeTab === 'useractivitylogform' && showUserActivityLogForm && (
+            <div className="table-container">
+              <div className="table-header-actions">
+                <h2>User Activity Log Form</h2>
+              </div>
+              <div className="dashboard-useractivitylogform-wrapper">
+                <UserActivityLogForm />
+              </div>
+            </div>
+          )}
+          {activeTab === 'audittrailform' && showAuditTrailForm && (
+            <div className="table-container">
+              <div className="table-header-actions">
+                <h2>Audit Trail Form</h2>
+              </div>
+              <div className="dashboard-audittrailform-wrapper">
+                <AuditTrailForm />
+              </div>
+            </div>
+          )}
+          {activeTab === 'costtracking' && showCostTrackingForm && (
+            <div className="table-container">
+              <div className="table-header-actions">
+                <h2>Cost Tracking Form</h2>
+              </div>
+              <div className="dashboard-costtracking-wrapper">
+                <CostTrackingForm />
+              </div>
+            </div>
+          )}
+          {activeTab === 'fieldactivitytracking' && showFieldActivityTrackingForm && (
+            <div className="table-container">
+              <div className="table-header-actions">
+                <h2>Field Activity Tracking Form</h2>
+              </div>
+              <div className="dashboard-fieldactivitytrackingform-wrapper">
+                <FieldActivityTrackingForm />
+              </div>
+            </div>
+          )}
+          {activeTab === 'productregistration' && showProductRegistrationForm && (
+            <div className="table-container">
+              <div className="table-header-actions">
+                <h2>Product Registration Form</h2>
+              </div>
+              <div className="dashboard-productregistrationform-wrapper">
+                <ProductRegistrationForm />
+              </div>
+            </div>
+          )}
+          {activeTab === 'evidenceupload' && showEvidenceUploadForm && (
+            <div className="table-container">
+              <div className="table-header-actions">
+                <h2>Evidence Upload Form</h2>
+              </div>
+              <div className="dashboard-evidenceuploadform-wrapper">
+                <EvidenceUploadForm />
+              </div>
+            </div>
+          )}
+          {activeTab === 'testschedulingform' && showTestSchedulingForm && (
+            <div className="table-container">
+              <div className="table-header-actions">
+                <h2>Test Scheduling Form</h2>
+              </div>
+              <div className="dashboard-testschedulingform-wrapper">
+                <TestSchedulingForm />
+              </div>
+            </div>
+          )}
+          {activeTab === 'historicaldataform' && showHistoricalDataForm && (
+            <div className="table-container">
+              <div className="table-header-actions">
+                <h2>Historical Data Form</h2>
+              </div>
+              <div className="dashboard-historicaldataform-wrapper">
+                <HistoricalDataForm />
+              </div>
+            </div>
+          )}
+          {activeTab === 'datavisualizationform' && showDataVisualizationForm && (
+            <div className="table-container">
+              <div className="table-header-actions">
+                <h2>Data Visualization Form</h2>
+              </div>
+              <div className="dashboard-datavisualizationform-wrapper">
+                <DataVisualizationForm />
+              </div>
+            </div>
+          )}
+          {activeTab === 'resultscomparisonform' && showResultsComparisonForm && (
+            <div className="table-container">
+              <div className="table-header-actions">
+                <h2>Results Comparison Form</h2>
+              </div>
+              <div className="dashboard-resultscomparisonform-wrapper">
+                <ResultsComparisonForm />
+              </div>
+            </div>
+          )}
+          {activeTab === 'addinventoryitemform' && showAddInventoryItemForm && (
+            <div className="table-container">
+              <div className="table-header-actions">
+                <h2>Add Inventory Item Form</h2>
+              </div>
+              <div className="dashboard-addinventoryitemform-wrapper">
+                <AddInventoryItemForm />
+              </div>
+            </div>
+          )}
+          {activeTab === 'stockvaluationform' && showStockValuationForm && (
+            <div className="table-container">
+              <div className="table-header-actions">
+                <h2>Stock Valuation Form</h2>
+              </div>
+              <div className="dashboard-stockvaluationform-wrapper">
+                <StockValuationForm />
+              </div>
+            </div>
+          )}
+          {activeTab === 'expiryalertsetupform' && showExpiryAlertSetupForm && (
+            <div className="table-container">
+              <div className="table-header-actions">
+                <h2>Expiry Alert Setup Form</h2>
+              </div>
+              <div className="dashboard-expiryalertsetupform-wrapper">
+                <ExpiryAlertSetupForm />
+              </div>
+            </div>
+          )}
+          {activeTab === 'customreportbuilderform' && showCustomReportBuilderForm && (
+            <div className="table-container">
+              <div className="table-header-actions">
+                <h2>Custom Report Builder Form</h2>
+              </div>
+              <div className="dashboard-customreportbuilderform-wrapper">
+                <CustomReportBuilderForm />
+              </div>
+            </div>
+          )}
+          {activeTab === 'forecastingform' && showForecastingForm && (
+            <div className="table-container">
+              <div className="table-header-actions">
+                <h2>Forecasting Form</h2>
+              </div>
+              <div className="dashboard-forecastingform-wrapper">
+                <ForecastingForm />
+              </div>
+            </div>
+          )}
+          {activeTab === 'protocolregistrationform' && showProtocolRegistrationForm && (
+            <div className="table-container">
+              <div className="table-header-actions">
+                <h2>Protocol Registration Form</h2>
+              </div>
+              <div className="dashboard-protocolregistrationform-wrapper">
+                <ProtocolRegistrationForm />
+              </div>
+            </div>
+          )}
+          {activeTab === 'alertconfigurationform' && showAlertConfigurationForm && (
+            <div className="table-container">
+              <div className="table-header-actions">
+                <h2>Alert Configuration Form</h2>
+              </div>
+              <div className="dashboard-alertconfigurationform-wrapper">
+                <AlertConfigurationForm />
+              </div>
+            </div>
+          )}
+          {activeTab === 'feedbackcollection' && showFeedbackCollectionForm && (
+            <div className="table-container">
+              <div className="table-header-actions">
+                <h2>Feedback Collection Form</h2>
+              </div>
+              <div className="dashboard-feedbackcollectionform-wrapper">
+                <FeedbackCollectionForm />
+              </div>
+            </div>
+          )}
+          {activeTab === 'broadcastmessageform' && showBroadcastMessageForm && (
+            <div className="table-container">
+              <div className="table-header-actions">
+                <h2>Broadcast Message Form</h2>
+              </div>
+              <div className="dashboard-broadcastmessageform-wrapper">
+                <BroadcastMessageForm />
+              </div>
+            </div>
+          )}
+          {activeTab === 'resourceallocationform' && showResourceAllocationForm && (
+            <div className="table-container">
+              <div className="table-header-actions">
+                <h2>Resource Allocation Form</h2>
+              </div>
+              <div className="dashboard-resourceallocationform-wrapper">
+                <ResourceAllocationForm />
+              </div>
+            </div>
+          )}
+          {activeTab === 'timetrackingform' && showTimeTrackingForm && (
+            <div className="table-container">
+              <div className="table-header-actions">
+                <h2>Time Tracking Form</h2>
+              </div>
+              <div className="dashboard-timetrackingform-wrapper">
+                <TimeTrackingForm />
               </div>
             </div>
           )}
