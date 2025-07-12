@@ -127,11 +127,14 @@ label {
   background-color: #013515;
   color: white;
   border: none;
-  padding: 10px 24px;
+  padding: 10px 24px 5px 24px;
   border-radius: 4px;
   cursor: pointer;
   font-weight: 500;
   transition: background-color 0.2s ease;
+  flex: 1;
+  height: calc(100% - 30px);
+  align-items: flex-end;
 }
 
 .save-btn:hover {
@@ -140,17 +143,19 @@ label {
 
 .cancel-btn {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   gap: 8px;
   background-color: #e20714;
   color: white;
   border: none;
-  padding: 10px 24px;
+  padding: 10px 24px 5px 24px;
   border-radius: 4px;
   cursor: pointer;
   font-weight: 500;
   transition: background-color 0.2s ease;
+  flex: 1;
+  height: calc(100% - 30px);
 }
 
 .cancel-btn:hover {

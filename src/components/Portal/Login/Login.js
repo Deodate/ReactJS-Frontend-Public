@@ -1,12 +1,14 @@
 import "./Login.css";
 import { Link, useNavigate } from "react-router-dom";
+import { API_CONFIG } from "../../config";
+
 function Login({ setUser }) {
   const navigate = useNavigate();
   async function handleLogin(e) {
     e.preventDefault();
     const phoneNo = document.querySelector('input[name="phoneno"]').value;
     const password = document.querySelector('input[name="password"]').value;
-    let response = await fetch("http://localhost:5000/users/login", {
+    let response = await fetch(`${API_CONFIG.BASE_URL}${API_CONFIG.AUTH.SIGNIN}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

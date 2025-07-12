@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000";
+const API_URL = "http://localhost:8888";
 import { Navigate } from "react-router-dom";
 export async function activity_log(user) {
   if (user) {
@@ -40,14 +40,14 @@ export async function activity_log(user) {
   }
 }
 
-export async function login(phoneNo, password) {
+export async function login(username, password) {
   const response = await (
-    await fetch(API_URL + "/user/login", {
+    await fetch(API_URL + "/api/auth/signin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ phoneNo, password }),
+      body: JSON.stringify({ username, password }),
     })
   ).json();
   if (response.message) {

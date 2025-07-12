@@ -105,27 +105,58 @@ const SignUp = (props) => {
     }
     
     setIsLoading(true);
+    setErrors({}); // Clear previous errors
+    setSuccessMessage(""); // Clear previous success messages
     
     try {
-      // This would be your API call to register the user
-      // For now, we'll simulate it with a timeout
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const response = await fetch('/api/auth/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        // Handle backend errors
+        const backendErrors = {};
+        if (data.message && data.message.startsWith("Validation error:")) {
+          // Parse the validation error message string
+          const errorDetails = data.message.substring("Validation error:".length).trim();
+          // Assuming the format is {fieldName=errorMessage}
+          const fieldMatch = errorDetails.match(/\{(.+?)=(.+?)\}/);
+          if (fieldMatch && fieldMatch[1] && fieldMatch[2]) {
+            backendErrors[fieldMatch[1]] = fieldMatch[2];
+          } else {
+             // Fallback for other potential error message structures
+            backendErrors.form = data.message; 
+          }
+        } else if (data.message) {
+             // Handle other types of backend errors with a general message
+            backendErrors.form = data.message; 
+        } else if (data.errors && Array.isArray(data.errors)) {
+             // Handle standard Spring validation errors (if applicable)
+             data.errors.forEach(err => {
+                if (err.field && err.defaultMessage) {
+                    backendErrors[err.field] = err.defaultMessage;
+                }
+             });
+        } else {
+           // Generic error if no specific format is recognized
+           backendErrors.form = "Registration failed. Please try again.";
+        }
+        setErrors(backendErrors);
+        setIsLoading(false);
+        return; // Stop further execution on error
+      }
       
+      // Handle successful registration
       setSuccessMessage("Registration successful! Redirecting to login...");
       
-      // Clear form
-      setFormData({
-        username: "",
-        email: "",
-        password: "",
-        confirmPassword: "",
-        fullName: "",
-        phoneNumber: "",
-        jobTitle: "",
-        company: "",
-        twoFactorEnabled: false,
-        role: "USER"
-      });
+      // Clear form (optional, depending on desired UX)
+      // setFormData({ ... }); 
       
       // Redirect after a delay
       setTimeout(() => {
@@ -133,8 +164,9 @@ const SignUp = (props) => {
       }, 2000);
       
     } catch (error) {
+      console.error('Network or unexpected error:', error);
       setErrors({
-        form: error.message || "Registration failed. Please try again."
+        form: "An unexpected error occurred. Please try again later."
       });
     } finally {
       setIsLoading(false);

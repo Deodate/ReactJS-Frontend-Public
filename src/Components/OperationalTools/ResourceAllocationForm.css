@@ -1,11 +1,11 @@
-.compliance-checklist-form-container {
+.resource-allocation-form-container {
     display: flex;
     justify-content: center;
     align-items: flex-start; /* Align to the top */
     padding: 20px;
 }
 
-.compliance-checklist-form {
+.resource-allocation-form {
     background-color: #fff;
     padding: 30px;
     border-radius: 8px;
@@ -14,32 +14,31 @@
     max-width: 600px; /* Limit form width */
 }
 
-.compliance-checklist-form h2 {
+.resource-allocation-form h2 {
     text-align: center;
     margin-bottom: 25px;
     color: #333;
 }
 
-.form-group {
+.form-row {
     margin-bottom: 20px;
     display: flex;
     align-items: center; /* Vertically align label and input */
+    gap: 15px; /* Space between label and input */
 }
 
-.form-group label {
-    margin-bottom: 8px;
+.form-row label {
     font-weight: bold;
     color: #555;
-    margin-right: 10px; /* Add some space between label and input */
-    flex-shrink: 0; /* Prevent label from shrinking */
-    width: 150px; /* Give labels a fixed width for alignment, adjust as needed */
+    min-width: 120px; /* Adjust as needed for label alignment */
 }
 
-.form-group input[type="text"],
-.form-group input[type="date"],
-.form-group input[type="number"],
-.form-group select,
-.form-group textarea {
+/* Adjust styling for inputs and selects */
+.form-row input[type="text"],
+.form-row input[type="date"],
+.form-row input[type="number"],
+.form-row select,
+.form-row textarea {
     flex-grow: 1; /* Allow input to take remaining space */
     max-width: 400px; /* Limit the maximum width of the input */
     padding: 10px;
@@ -49,24 +48,24 @@
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
-.form-group textarea {
+.form-row textarea {
     resize: vertical; /* Allow vertical resizing */
     min-height: 100px;
 }
 
-.form-buttons {
+.button-row {
     display: flex;
     justify-content: flex-start; /* Align buttons to the left */
     gap: 10px; /* Add space between buttons */
     margin-top: 25px; /* Add space above the buttons */
 }
 
-.compliance-checklist-form button[type="submit"] {
+.button-row .submit-button {
     display: block;
     width: 100%;
     max-width: 100px; /* Reduce the width of the submit button */
     padding: 10px 15px; /* Adjust padding */
-    background-color: #28a745; /* Green color for generate */
+    background-color: #007bff; /* Blue color for submit */
     color: white;
     border: none;
     border-radius: 4px;
@@ -75,11 +74,11 @@
     transition: background-color 0.3s ease;
 }
 
-.compliance-checklist-form button[type="submit"]:hover {
-    background-color: #218838; /* Darker green on hover */
+.button-row .submit-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
-.compliance-checklist-form .cancel-button {
+.button-row .cancel-button {
     display: block;
     width: 100%;
     max-width: 100px; /* Limit the width of the cancel button */
@@ -93,6 +92,6 @@
     transition: background-color 0.3s ease;
 }
 
-.compliance-checklist-form .cancel-button:hover {
+.button-row .cancel-button:hover {
     background-color: #c82333; /* Darker red on hover */
 } 
